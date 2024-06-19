@@ -253,6 +253,7 @@ Remove all listeners for this plugin.
 | **`path`**       | <code>string</code> | The path of the file. Only available on Android and iOS.                                                             |       |
 | **`size`**       | <code>number</code> | The size of the file in bytes.                                                                                       |       |
 | **`width`**      | <code>number</code> | The width of the image or video in pixels. Only available on Android and iOS.                                        | 0.5.3 |
+| **`rotation`**   | <code>number</code> | The rotation of video in degrees. Only available on Android                                                          |       |
 
 
 #### PickFilesOptions

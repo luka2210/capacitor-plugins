@@ -184,6 +184,13 @@ export interface PickedFile {
    * @since 0.5.3
    */
   width?: number;
+  /**
+   * The rotation of video in degrees.
+   * 
+   * Only available on Android
+   * 
+   */
+  rotation?: number;
 }
 
 /**

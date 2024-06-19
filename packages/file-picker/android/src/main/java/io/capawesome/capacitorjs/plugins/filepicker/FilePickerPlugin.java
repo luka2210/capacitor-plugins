@@ -202,6 +202,7 @@ public class FilePickerPlugin extends Plugin {
             fileResult.put("name", implementation.getNameFromUri(uri));
             fileResult.put("path", implementation.getPathFromUri(uri));
             fileResult.put("size", implementation.getSizeFromUri(uri));
+            fileResult.put("rotation", implementation.getRotationFromUri(uri));
             filesResultList.add(fileResult);
         }
         callResult.put("files", JSArray.from(filesResultList.toArray()));

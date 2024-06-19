@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.provider.DocumentsContract;
 import android.provider.OpenableColumns;
 import android.util.Base64;
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.getcapacitor.Bridge;
@@ -136,6 +138,21 @@ public class FilePicker {
             return new FileResolution(height, width);
         }
         return null;
+    }
+
+    @Nullable
+    public Integer getRotationFromUri(@NonNull Uri uri) {
+      if (!isVideoUri(uri)) return null;
+      MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+      retriever.setDataSource(bridge.getContext(), uri);
+      int rotation = Integer.valueOf(retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_ROTATION));
+      try {
+        retriever.release();
+      } catch (Exception e) {
+        Logger.error(TAG, "MediaMetadataRetriever.release() failed.", e);
+      }
+      Log.d(TAG, "Video rotation: " + rotation);
+      return rotation;
     }
 
     private boolean isImageUri(Uri uri) {
