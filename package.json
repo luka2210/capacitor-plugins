@@ -1,6 +1,6 @@
 {
   "name": "capacitor-plugins",
-  "private": true,
+  "private": false,
   "packageManager": "npm@8.3.0",
   "workspaces": [
     "packages/*"
